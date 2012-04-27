@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="diplomarbeit.random.provider">
+  <implementation class="diplomarbeit.random.provider.Implementation" />
+  <service>
+    <provide interface="diplomarbeit.random.RandomService" />
+  </service>
+  <property name="service.exported.interfaces" value="*" />
+  <property name="service.exported.configs" value="org.apache.cxf.rs" />
+  <property name="org.apache.cxf.rs.address" value="http://localhost:9000/" />
+</scr:component>

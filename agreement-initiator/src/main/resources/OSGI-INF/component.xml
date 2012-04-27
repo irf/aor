@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="diplomarbeit.agreement.initiator">
+  <implementation class="diplomarbeit.agreement.initiator.Implementation" />
+  <!--<service>
+    <provide interface="diplomarbeit.agreement.AgreementPort" />
+  </service>
+  <property name="service.exported.interfaces" value="*" />
+  <property name="service.exported.configs" value="org.apache.cxf.rs" />
+  <property name="org.apache.cxf.rs.address" value="http://localhost:9002/" />
+  
+  <reference name="responder" interface="diplomarbeit.agreement.AgreementFactoryPort" /> -->
+  <reference
+  	interface="diplomarbeit.agreement.rest.AgreementFactoryPort"
+  	cardinality="1..1"
+  	bind="bindAgreementFactory"
+  	unbind="unbindAgreementFactory"
+  	policy="dynamic"
+  	/>
+</scr:component>

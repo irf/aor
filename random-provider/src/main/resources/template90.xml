@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Template xmlns="http://schemas.ggf.org/graap/2007/03/ws-agreement" TemplateId="90">
+	<Name>Testvereinbarung 90%</Name>
+	<Context>
+		<AgreementResponder>Testanbieter</AgreementResponder>
+		<ServiceProvider>AgreementResponder</ServiceProvider>
+	</Context>
+	<Terms>
+		<All>
+			<ServiceDescriptionTerm Name="description" ServiceName="TestService" />
+			<ServiceReference Name="reference" ServiceName="TestService">
+				http://localhost:9000/test
+			</ServiceReference>
+			<GuaranteeTerm Name="garantie" Obligated="ServiceProvider" >
+				<ServiceScope ServiceName="TestService" />
+				<ServiceLevelObjective>
+					<KPITarget>
+						<KPIName>Availability</KPIName>
+						<Target>0.90</Target>
+					</KPITarget>
+				</ServiceLevelObjective>
+				<BusinessValueList>
+					<Penalty>
+						<AssessmentInterval>
+							<!-- <TimeInterval> -->
+								PT10S
+							<!-- </TimeInterval> -->
+						</AssessmentInterval>
+						<ValueUnit>EUR</ValueUnit>
+						<ValueExpr>0.05</ValueExpr>
+					</Penalty>
+				</BusinessValueList>
+			</GuaranteeTerm>
+		</All>
+	</Terms>
+</Template>

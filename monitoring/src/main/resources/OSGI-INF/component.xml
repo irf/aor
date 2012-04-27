@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="diplomarbeit.monitoring">
+  <service>
+    <provide interface="diplomarbeit.monitoring.Monitoring" />
+  </service>
+  <implementation class="diplomarbeit.monitoring.impl.Implementation" />
+  <property name="service.exported.interfaces" value="*" />
+  <property name="service.exported.configs" value="org.apache.cxf.rs" />
+  <property name="org.apache.cxf.rs.address" value="http://localhost:9005/" />
+  
+  <reference
+    name="remoteServiceAdmin"
+  	interface="org.osgi.service.remoteserviceadmin.RemoteServiceAdmin" />
+</scr:component>

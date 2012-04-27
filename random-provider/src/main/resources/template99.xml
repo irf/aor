@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Template TemplateId="99"
+		xmlns="http://schemas.ggf.org/graap/2007/03/ws-agreement" 
+		xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	>
+	<Name>Testvereinbarung variabel</Name>
+	<Context>
+		<AgreementResponder>Testanbieter</AgreementResponder>
+		<ServiceProvider>AgreementResponder</ServiceProvider>
+	</Context>
+	<Terms>
+		<All>
+			<ServiceDescriptionTerm Name="description" ServiceName="TestService" />
+			<ServiceReference Name="reference" ServiceName="TestService">
+				http://localhost:9000/test
+			</ServiceReference>
+			<GuaranteeTerm Name="garantie" Obligated="ServiceProvider" >
+				<ServiceScope ServiceName="TestService" />
+				<ServiceLevelObjective>
+					<KPITarget>
+						<KPIName>Availability</KPIName>
+						<Target>0.99</Target>
+					</KPITarget>
+				</ServiceLevelObjective>
+				<BusinessValueList>
+					<Penalty>
+						<AssessmentInterval>
+							<!-- <TimeInterval> -->
+								PT10S
+							<!-- </TimeInterval> -->
+						</AssessmentInterval>
+						<ValueUnit>EUR</ValueUnit>
+						<ValueExpr>0.05</ValueExpr>
+					</Penalty>
+				</BusinessValueList>
+			</GuaranteeTerm>
+		</All>
+	</Terms>
+	<CreationConstraints>
+		<Item Name="Availability">
+			<Location>//KPITarget[KPIName=Availability]/Target</Location>
+			<ItemConstraint>
+				<xs:restriction>
+					<xs:minInclusive xs:value="0" />
+					<xs:maxExclusive xs:value="1" />
+				</xs:restriction>
+			</ItemConstraint>
+		</Item>
+	</CreationConstraints>
+</Template>

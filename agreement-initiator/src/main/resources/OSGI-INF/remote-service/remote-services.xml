@@ -1,0 +1,8 @@
+<service-descriptions xmlns="http://www.osgi.org/xmlns/sd/v1.0.0">
+  <service-description>
+    <provide interface="diplomarbeit.agreement.rest.AgreementFactoryPort" />
+    <property name="service.exported.interfaces">*</property><!-- ?? -->
+    <property name="service.exported.configs">org.apache.cxf.rs</property>
+    <property name="org.apache.cxf.rs.address">http://localhost:9001/</property>
+  </service-description>
+</service-descriptions>

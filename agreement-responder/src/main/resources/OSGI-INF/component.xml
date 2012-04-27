@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="diplomarbeit.agreement.responder">
+  <service>
+    <provide interface="diplomarbeit.agreement.responder.HtmlRepresentation" />
+    <!--<provide interface="diplomarbeit.agreement.rest.AgreementFactory" />-->
+  </service>
+  <implementation class="diplomarbeit.agreement.responder.AgreementFactoryImpl" />
+  <property name="service.exported.interfaces" value="*" />
+  <property name="service.exported.configs" value="org.apache.cxf.rs" />
+  <property name="org.apache.cxf.rs.address" value="http://localhost:9001/" />
+  
+  <reference
+  	interface="diplomarbeit.agreement.osgi.AgreementResponder"
+  	bind="serviceOffered"
+  	unbind="serviceRevoked"
+  	cardinality="0..n"
+  	policy="dynamic" />
+  <reference
+    name="remoteServiceAdmin"
+  	interface="org.osgi.service.remoteserviceadmin.RemoteServiceAdmin" />
+</scr:component>

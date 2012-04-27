@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="diplomarbeit.agreement.serialization">
+  <implementation class="diplomarbeit.agreement.serialization.EnumReaderWriter" />
+  <service>
+    <provide interface="javax.ws.rs.ext.MessageBodyReader" />
+    <provide interface="javax.ws.rs.ext.MessageBodyWriter" />
+  </service>
+  <property name="org.apache.cxf.rs.provider" type="Boolean" value="true" />
+</scr:component>

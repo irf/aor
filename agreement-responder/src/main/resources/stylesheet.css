@@ -1,0 +1,16 @@
+*, th, td {
+	font-family: Arial, Helvetica, Sans-Serif;
+}
+h1 {
+	border-bottom: 4px solid #649600;
+}
+h2 {
+	margin-bottom: 6px;
+}
+em {
+	font-style: normal;
+	color: #649600;
+}
+ul {
+	margin-top: 0;
+}
